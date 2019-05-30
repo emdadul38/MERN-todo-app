@@ -7,6 +7,7 @@ const Todo = (props) => (
         <td>{props.todo.todo_description}</td>
         <td>{props.todo.todo_responsible}</td>
         <td>{props.todo.todo_priority}</td>
+        <td>{(props.todo.todo_completed)? <button type='button' className="btn btn-success">Completed</button>: <button type='button' className="btn btn-warning">Not Completed</button>  }</td>
         <td>
             <Link to={"/edit/"+ props.todo._id}> Edit </Link>
         </td>
@@ -44,6 +45,7 @@ class TodoList extends Component {
                             <th>Description</th>
                             <th>Responsible</th>
                             <th>Priority</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
